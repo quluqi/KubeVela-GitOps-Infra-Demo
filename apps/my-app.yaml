@@ -1,0 +1,18 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: my-app
+  namespace: default
+spec:
+  components:
+    - name: my-server
+      type: webservice
+      properties:
+        image: ghcr.io/fogdong/test-fog:master-cba5605f-1632714412
+        port: 8088
+      traits:
+        - type: ingress
+          properties:
+            domain: testsvc.example.com
+            http:
+              /: 8088
