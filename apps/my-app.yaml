@@ -8,11 +8,11 @@ spec:
     - name: my-server
       type: webservice
       properties:
-        image: ghcr.io/fogdong/test-fog:master-cba5605f-1632714412
-        port: 8088
+        image: quluqi/core-mvc:v1.0.0
+        port: 80
       traits:
         - type: ingress
           properties:
             domain: testsvc.example.com
             http:
-              /: 8088
+              /: 80
